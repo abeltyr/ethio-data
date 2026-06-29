@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
+/*
+  Ethiopia Economic Data — "Statistical Bulletin"
+  Light, archival, precise. Palette is semantic to economics: deep Ethiopian green (primary),
+  ochre (birr/gold), oxblood (deficit / depreciation), surplus-green (surplus / appreciation).
+  Every figure is set in tabular monospace. Colours live here only — never inline in JSX.
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 0.25rem;
+
+  --background: #eef1ec; /* cool pale eucalyptus paper */
+  --foreground: #161f1a; /* dark green-black ink */
+
+  --card: #f7f9f4;
+  --card-foreground: #161f1a;
+  --popover: #f7f9f4;
+  --popover-foreground: #161f1a;
+
+  --primary: #1c6b49; /* deep Ethiopian green */
+  --primary-foreground: #f3f7f0;
+
+  --secondary: #e2e7dd;
+  --secondary-foreground: #28332c;
+
+  --muted: #e2e7dd;
+  --muted-foreground: #586a5f; /* grey-green secondary text */
+
+  --accent: #e6ddc7; /* faint ochre wash */
+  --accent-foreground: #4a3a16;
+
+  --destructive: #9e2b25; /* oxblood */
+  --destructive-foreground: #f7f9f4;
+
+  --border: #cfd6c9; /* hairline */
+  --input: #cfd6c9;
+  --ring: #1c6b49;
+
+  /* Domain-semantic tokens */
+  --gold: #a9762a; /* ochre — birr / gold / monetary highlight */
+  --positive: #2e7d5b; /* surplus, appreciation, growth */
+  --negative: #9e2b25; /* deficit, depreciation, decline */
+  --grid: #d7ddd0; /* chart gridlines / column rules */
+
+  /* Chart series ramp */
+  --chart-1: #1c6b49;
+  --chart-2: #a9762a;
+  --chart-3: #9e2b25;
+  --chart-4: #3f6f8f;
+  --chart-5: #6c7a5b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-grid: var(--grid);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Responsive page gutters (kebab-case custom utility, per conventions). */
+@utility sp-x {
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 4rem;
+  }
+}
+
+/* Tabular monospace figures — the ledger treatment for every number. */
+@utility tnum {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.01em;
+}
+
+/* Small-caps eyebrow label. */
+@utility eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.6875rem;
+  line-height: 1.2;
+}
+
+@utility animate {
+  transition-property:
+    color, background-color, border-color, opacity, transform;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

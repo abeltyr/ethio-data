@@ -24,14 +24,9 @@
     "web:dev": "bun run --filter @ethiodata/web dev",
     "web:build": "bun run --filter @ethiodata/web build"
   },
-  "overrides": {
-    "esbuild": "0.27.7"
-  },
   "devDependencies": {
     "turbo": "2.8.17",
     "turbo-darwin-arm64": "2.8.17",
-    "typescript": "^5",
-    "@rollup/rollup-darwin-arm64": "^4",
-    "@esbuild/darwin-arm64": "0.27.7"
+    "typescript": "^5"
   }
 }

@@ -9,7 +9,7 @@ ethiodata/
 ├── tsconfig.base.json          shared TypeScript config (each workspace extends it)
 ├── apps/
 │   ├── collector/   @ethiodata/collector  — the data pipeline (was ./src)
-│   └── web/         @ethiodata/web         — Astro site rendering showcase/ + data
+│   └── web/         @ethiodata/web         — Next.js research site reading the domain DBs
 ├── packages/
 │   ├── database/    @ethiodata/database    — getDb, schema, save, seed, fetch ledger
 │   └── types/       @ethiodata/types       — shared row + provider types
@@ -26,7 +26,7 @@ ethiodata/
 | `@ethiodata/types` | `packages/types` | Pure TypeScript types (no runtime). |
 | `@ethiodata/database` | `packages/database` | Provider-agnostic data layer: `getDb(domain)`, the schema modules, idempotent `save*`, `seed*`, and the `fetch_log` ledger. Reusable by any app. |
 | `@ethiodata/collector` | `apps/collector` | The collection pipeline (providers, orchestrator, report, migration). Maps each provider to its domain DB. |
-| `@ethiodata/web` | `apps/web` | Astro static site; reads `showcase/*.md` via a content collection and can read `data/db/*.db` via `@ethiodata/database`. |
+| `@ethiodata/web` | `apps/web` | Next.js 16 research site (App Router, React 19, Tailwind v4, shadcn). Reads the domain databases directly with `better-sqlite3` (Node-compatible; `bun:sqlite` is Bun-only) and renders raw tables + research charts per domain. |
 
 The data layer is **domain-aware, not provider-aware**: `@ethiodata/database` exposes
 `getDb(domain)`; the collector resolves a provider id → its domain (via the registry) and
@@ -66,28 +66,20 @@ or `cd apps/web && bun run dev`.
 ## ⚠️ Native binaries (important for CI / non-macOS)
 
 Bun in this environment does **not** auto-install the platform-specific native binaries that
-`rollup`, `esbuild`, and `turbo` need (a known Bun limitation with transitive
-`optionalDependencies`). So the root `package.json` pins the **macOS arm64** binaries
-explicitly under `devDependencies`:
+several tools need (a known Bun limitation with transitive `optionalDependencies`). So the
+**macOS arm64** binaries are pinned explicitly under `devDependencies`:
 
-```json
-"@rollup/rollup-darwin-arm64", "@esbuild/darwin-arm64", "turbo-darwin-arm64"
-```
+- root (Turbo): `turbo-darwin-arm64`
+- `apps/web` (Next.js / Tailwind / Biome toolchain): `lightningcss-darwin-arm64`,
+  `@tailwindcss/oxide-darwin-arm64`, `@biomejs/cli-darwin-arm64`
+
+(`better-sqlite3` ships its own prebuilt binaries and needs no pin.)
 
 Also note: `turbo` is pinned to `2.8.17` (not `latest`/`2.10.0`) because, at time of writing,
 turbo's platform-binary packages on npm lag the main package — `2.10.0` has no matching
-`turbo-darwin-arm64`. And `esbuild` is pinned via `overrides` to a single version so the one
-native binary resolves.
+`turbo-darwin-arm64`.
 
-**On Linux / Intel Mac / CI**, replace those three pins with your platform's equivalents,
-e.g. for Linux x64:
-
-```json
-"@rollup/rollup-linux-x64-gnu", "@esbuild/linux-x64", "turbo-linux-64"
-```
-
-(Keep the `esbuild` override and the `turbo@2.8.17` pin.) When Bun fixes optional-dependency
-installation, these explicit pins can be dropped entirely.
-
-The web app uses Astro's **passthrough image service** (`astro.config.mjs`) so it does **not**
-require the heavy native `sharp` dependency.
+**On Linux / Intel Mac / CI**, swap each pin for your platform's equivalent — e.g. for Linux
+x64: `turbo-linux-64`, `lightningcss-linux-x64-gnu`, `@tailwindcss/oxide-linux-x64-gnu`,
+`@biomejs/cli-linux-x64`. When Bun fixes optional-dependency installation, the explicit pins
+can be dropped entirely.
