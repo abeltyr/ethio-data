@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { Chart } from "@/modules/common/components/chart";
 import { Plate } from "@/modules/common/components/plate";
 import { SectionHeader } from "@/modules/common/components/sectionHeader";
-import { SeriesChart } from "@/modules/common/components/seriesChart";
 import type { Point } from "@/types/warehouse";
 
 export type FeaturedPlatesProps = {
@@ -23,10 +23,14 @@ export function FeaturedPlates({
       source: "official vs black-market USD, monthly",
       foot: "How much more a dollar costs on the street than at the bank.",
       chart: (
-        <SeriesChart
-          points={premium}
-          tone="negative"
-          area
+        <Chart
+          series={[
+            { name: "Premium", points: premium, tone: "negative", area: true },
+          ]}
+          xLabel="Month"
+          yLabel="Premium (%)"
+          xKind="month"
+          yKind="pct"
           ariaLabel="USD black-market premium over the official rate, percent, monthly"
         />
       ),
@@ -38,10 +42,19 @@ export function FeaturedPlates({
       source: "UN Comtrade, annual",
       foot: "Exports minus imports, in USD billions — a persistent deficit.",
       chart: (
-        <SeriesChart
-          points={balanceBn}
-          tone="negative"
-          area
+        <Chart
+          series={[
+            {
+              name: "Balance",
+              points: balanceBn,
+              tone: "negative",
+              area: true,
+            },
+          ]}
+          xLabel="Year"
+          yLabel="USD billions"
+          xKind="year"
+          yKind="billions"
           ariaLabel="Annual trade balance, USD billions"
         />
       ),
@@ -53,9 +66,12 @@ export function FeaturedPlates({
       source: "World Bank, annual",
       foot: "The consumer price index — the backbone for real, inflation-adjusted figures.",
       chart: (
-        <SeriesChart
-          points={cpi}
-          tone="gold"
+        <Chart
+          series={[{ name: "CPI", points: cpi, tone: "gold", area: true }]}
+          xLabel="Year"
+          yLabel="CPI level"
+          xKind="year"
+          yKind="thousands"
           ariaLabel="Consumer price index level, annual"
         />
       ),

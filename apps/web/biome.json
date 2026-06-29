@@ -44,6 +44,12 @@
       "linter": {
         "rules": { "security": { "noDangerouslySetInnerHtml": "off" } }
       }
+    },
+    {
+      "includes": ["src/modules/common/components/chart/index.tsx"],
+      "linter": {
+        "rules": { "a11y": { "noStaticElementInteractions": "off" } }
+      }
     }
   ]
 }

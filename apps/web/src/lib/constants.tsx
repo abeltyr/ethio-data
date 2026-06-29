@@ -68,5 +68,7 @@ export const DOMAINS: DomainNav[] = [
 export const NAV = [
   { href: "/", label: "Overview" },
   ...DOMAINS.map((d) => ({ href: d.href, label: d.label })),
+  { href: "/analysis", label: "Analysis" },
+  { href: "/data", label: "Explore" },
   { href: "/methodology", label: "Methodology" },
 ];

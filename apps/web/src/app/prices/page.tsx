@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/constants";
+import { pricesFindings } from "@/lib/data/warehouse/findings";
 import {
   categories,
   coverage,
@@ -61,7 +62,8 @@ export default function PricesPage() {
         coverage={cov}
         categories={categories()}
         staple={staple}
-        raw={rawPrices(40)}
+        raw={rawPrices(120)}
+        findings={pricesFindings(cov.markets, cov.commodities)}
       />
     </>
   );

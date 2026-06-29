@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/constants";
+import { macroFindings } from "@/lib/data/warehouse/findings";
 import {
   coverage,
   indicatorSeries,
@@ -50,11 +51,12 @@ export default function MacroPage() {
       />
       <MacroTemplate
         coverage={cov}
-        indicators={latestIndicators(24)}
+        indicators={latestIndicators(40)}
         cpi={inf.cpi}
         gdp={indicatorSeries("NY.GDP.MKTP.CD")}
         inflationYoY={inf.latestYoY}
         inflationPeriod={inf.latestPeriod}
+        findings={macroFindings()}
       />
     </>
   );

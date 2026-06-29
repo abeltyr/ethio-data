@@ -7,6 +7,7 @@ import {
   premiumSeries,
   rawRates,
 } from "@/lib/data/warehouse/currency";
+import { currencyFindings } from "@/lib/data/warehouse/findings";
 import { breadcrumbLd, datasetLd } from "@/lib/utils/jsonLd";
 import { JsonLdScript } from "@/modules/common/components/jsonLdScript";
 import { CurrencyTemplate } from "@/modules/currency/templates";
@@ -53,7 +54,8 @@ export default function CurrencyPage() {
         latest={latestFx()}
         premium={premiumSeries()}
         gold={goldSeries()}
-        raw={rawRates(40)}
+        raw={rawRates(120)}
+        findings={currencyFindings()}
       />
     </>
   );

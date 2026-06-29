@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/constants";
+import { propertyFindings } from "@/lib/data/warehouse/findings";
 import {
   coverage,
   listingTypes,
@@ -59,7 +60,8 @@ export default function HousingPage() {
         coverage={cov}
         byBedroom={summaryByBedroom()}
         trends={trends}
-        raw={rawListings(40)}
+        raw={rawListings(120)}
+        findings={propertyFindings()}
       />
     </>
   );

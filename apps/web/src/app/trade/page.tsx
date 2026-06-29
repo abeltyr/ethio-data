@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/constants";
+import { tradeFindings } from "@/lib/data/warehouse/findings";
 import {
   balanceSeries,
   coverage,
@@ -60,7 +61,8 @@ export default function TradePage() {
         imports={topImports(year)}
         partners={topPartners(year)}
         coffee={signatureExports().coffee}
-        raw={rawFlows(40)}
+        raw={rawFlows(120)}
+        findings={tradeFindings()}
       />
     </>
   );

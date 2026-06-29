@@ -28,6 +28,18 @@ export function SiteFooter() {
             </Link>
           ))}
           <Link
+            href="/analysis"
+            className="animate text-muted-foreground text-sm hover:text-primary"
+          >
+            Analysis
+          </Link>
+          <Link
+            href="/data"
+            className="animate text-muted-foreground text-sm hover:text-primary"
+          >
+            Explore
+          </Link>
+          <Link
             href="/methodology"
             className="animate text-muted-foreground text-sm hover:text-primary"
           >
