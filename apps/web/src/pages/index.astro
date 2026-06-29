@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+
+const docs = await getCollection("showcase");
+
+// Show the guide in a sensible reading order (the rest fall to the end alphabetically).
+const order = [
+  "README",
+  "A-Z-showcase-ideas",
+  "currency-and-fx",
+  "food-and-commodity-prices",
+  "trade",
+  "macro-economy",
+  "housing-and-rent",
+  "visualization-and-aggregation-guide",
+  "research-agenda",
+];
+const rank = (id: string) => {
+  const i = order.indexOf(id);
+  return i === -1 ? 999 : i;
+};
+const sorted = [...docs].sort((a, b) => rank(a.id) - rank(b.id) || a.id.localeCompare(b.id));
+const pretty = (id: string) =>
+  id === "README"
+    ? "Overview"
+    : id.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+
+const domains = [
+  { db: "currency", label: "Currency & FX", blurb: "Official + black-market rates, gold." },
+  { db: "prices", label: "Food & Commodity Prices", blurb: "Market prices across the country." },
+  { db: "macro", label: "Macro Economy", blurb: "Inflation, growth, national indicators." },
+  { db: "trade", label: "Trade", blurb: "Exports, imports, the deficit." },
+  { db: "property", label: "Housing & Rent", blurb: "Addis Ababa listings." },
+];
+---
+
+<Base title="Ethiopia Economic Data">
+  <h1>Ethiopia Economic Data</h1>
+  <p class="muted">
+    Forex, food &amp; commodity prices, macroeconomic indicators, trade flows, and housing —
+    collected continuously from public and private sources, explained for everyone.
+  </p>
+
+  <h2>The data</h2>
+  <ul>
+    {domains.map((d) => (
+      <li><strong>{d.label}</strong> <span class="muted">— {d.blurb}</span></li>
+    ))}
+  </ul>
+
+  <h2>Showcase guide</h2>
+  <p class="muted">What the data can show, how to present it, and what research it supports.</p>
+  <ul>
+    {sorted.map((d) => (
+      <li><a href={`/showcase/${d.id}/`}>{pretty(d.id)}</a></li>
+    ))}
+  </ul>
+</Base>

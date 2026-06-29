@@ -3,6 +3,10 @@
 How this project is wired, where to change things, and how to run it. For *what data
 exists and where it comes from*, see **[DATA_SOURCES.md](DATA_SOURCES.md)**.
 
+> **Monorepo note:** this repo is now a Turborepo (see **[MONOREPO.md](MONOREPO.md)**). Paths
+> below written as `src/…` now live under `apps/collector/src/…`, and the database/schema/
+> ledger modules under `packages/database/src/…`. The wiring and behaviour are unchanged.
+
 ---
 
 ## 1. What this is

@@ -1,6 +1,6 @@
 # `macro.db` — Ethiopia data warehouse
 
-_Auto-generated 2026-06-29 11:01 UTC by `src/report.ts`. File: `data/db/macro.db`._
+_Auto-generated 2026-06-29 14:20 UTC by `src/report.ts`. File: `data/db/macro.db`._
 
 Annual macroeconomic indicator series for Ethiopia. Source/provenance detail: see `DATA_SOURCES.md`.
 
@@ -8,7 +8,7 @@ Annual macroeconomic indicator series for Ethiopia. Source/provenance detail: se
 
 | source | name | rows (primary table) | span | last fetched |
 | --- | --- | --- | --- | --- |
-| worldbank | World Bank Indicators | 955 | 1960 → 2025 | 2026-06-29 11:00:57 |
+| worldbank | World Bank Indicators | 955 | 1960 → 2025 | 2026-06-29 11:31:26 |
 | imf | IMF DataMapper (WEO) | 0 | — | — |
 
 ## Tables
@@ -16,7 +16,7 @@ Annual macroeconomic indicator series for Ethiopia. Source/provenance detail: se
 | table | rows | span | columns (type) |
 | --- | --- | --- | --- |
 | `economic_indicators` | 955 | 1960 → 2025 | id TEXT, provider_id TEXT, indicator_code TEXT, indicator_name TEXT, area TEXT, period TEXT, period_type TEXT, value REAL, unit TEXT, created_at TEXT |
-| `fetch_log` | 1 | 2026-06-29 11:00:57 → 2026-06-29 11:00:57 | provider TEXT, task TEXT, unit TEXT, status TEXT, rows INTEGER, fetched_at TEXT |
+| `fetch_log` | 2 | 2026-06-29 11:31:26 → 2026-06-29 12:14:50 | provider TEXT, task TEXT, unit TEXT, status TEXT, rows INTEGER, fetched_at TEXT |
 | `providers` | 17 | — | id TEXT, name TEXT, type TEXT, api_url TEXT |
 
 ## Breakdown

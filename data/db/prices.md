@@ -1,6 +1,6 @@
 # `prices.db` — Ethiopia data warehouse
 
-_Auto-generated 2026-06-29 11:01 UTC by `src/report.ts`. File: `data/db/prices.db`._
+_Auto-generated 2026-06-29 14:20 UTC by `src/report.ts`. File: `data/db/prices.db`._
 
 Food / commodity / livestock prices in long format, plus week/month/year roll-ups. Source/provenance detail: see `DATA_SOURCES.md`.
 
@@ -8,12 +8,12 @@ Food / commodity / livestock prices in long format, plus week/month/year roll-up
 
 | source | name | rows (primary table) | span | last fetched |
 | --- | --- | --- | --- | --- |
-| wfp | WFP Food Prices (Ethiopia) | 60,289 | 2000-01-15 → 2026-03-15 | 2026-06-29 11:00:56 |
-| fewsnet | FEWS NET Market Prices | 46,161 | 2001-07-31 → 2026-04-30 | 2026-06-29 11:00:56 |
-| worldbank_pinksheet | World Bank Pink Sheet (Global Benchmarks) | 7,666 | 1960-01-15 → 2026-05-15 | 2026-06-29 11:00:56 |
-| faostat | FAOSTAT Producer Prices (Ethiopia) | 984 | 1994-12-31 → 2018-12-31 | 2026-06-29 11:00:56 |
-| worldbank_rtp | World Bank Real-Time Prices (Ethiopia, est.) | 19,874 | 2007-01-01 → 2026-04-01 | 2026-06-29 11:00:56 |
-| twomerkato | 2merkato (ECX Daily Trade Data) | 27 | 2026-04-29 → 2026-05-08 | 2026-06-29 11:00:56 |
+| wfp | WFP Food Prices (Ethiopia) | 60,289 | 2000-01-15 → 2026-03-15 | 2026-06-29 11:31:26 |
+| fewsnet | FEWS NET Market Prices | 46,161 | 2001-07-31 → 2026-04-30 | 2026-06-29 11:31:26 |
+| worldbank_pinksheet | World Bank Pink Sheet (Global Benchmarks) | 7,666 | 1960-01-15 → 2026-05-15 | 2026-06-29 11:31:26 |
+| faostat | FAOSTAT Producer Prices (Ethiopia) | 984 | 1994-12-31 → 2018-12-31 | 2026-06-29 11:31:26 |
+| worldbank_rtp | World Bank Real-Time Prices (Ethiopia, est.) | 19,874 | 2007-01-01 → 2026-04-01 | 2026-06-29 11:31:26 |
+| twomerkato | 2merkato (ECX Daily Trade Data) | 27 | 2026-04-29 → 2026-05-08 | 2026-06-29 11:31:26 |
 
 ## Tables
 
@@ -22,7 +22,7 @@ Food / commodity / livestock prices in long format, plus week/month/year roll-up
 | `commodities` | 207 | — | id TEXT, code TEXT, name TEXT, category TEXT, unit TEXT |
 | `commodity_aggregates` | 61,877 | 1960 → 2026-05 | id TEXT, provider_id TEXT, commodity_id TEXT, market_id TEXT, price_type TEXT, period_type TEXT, period_value TEXT, avg_price REAL, min_price REAL, max_price REAL, avg_price_usd REAL, price_count INTEGER, updated_at TEXT |
 | `commodity_prices` | 135,001 | 1960-01-15 → 2026-05-15 | id TEXT, provider_id TEXT, commodity_id TEXT, market_id TEXT, date TEXT, price REAL, currency TEXT, price_usd REAL, price_type TEXT, unit TEXT, created_at TEXT |
-| `fetch_log` | 6 | 2026-06-29 11:00:56 → 2026-06-29 11:00:56 | provider TEXT, task TEXT, unit TEXT, status TEXT, rows INTEGER, fetched_at TEXT |
+| `fetch_log` | 6 | 2026-06-29 11:31:26 → 2026-06-29 11:31:26 | provider TEXT, task TEXT, unit TEXT, status TEXT, rows INTEGER, fetched_at TEXT |
 | `markets` | 328 | — | id TEXT, name TEXT, admin1 TEXT, admin2 TEXT, latitude REAL, longitude REAL, country TEXT |
 | `providers` | 17 | — | id TEXT, name TEXT, type TEXT, api_url TEXT |
 

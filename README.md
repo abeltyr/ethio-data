@@ -35,7 +35,8 @@ logs failures to `failed_dates.log`.
 
 | Doc | Read it for |
 |-----|-------------|
-| **[ARCHITECTURE.md](ARCHITECTURE.md)** | How the code is wired, how to run it, where to go to fix what, how to add a provider, env-var config, the DB schema. |
+| **[MONOREPO.md](MONOREPO.md)** | Workspace layout (apps/packages), Turbo commands, and the native-binary note for CI / non-macOS. |
+| **[ARCHITECTURE.md](ARCHITECTURE.md)** | How the code is wired, how to run it, where to go to fix what, how to add a provider, env-var config, the DB schema. (Paths now live under `apps/collector/src/` and `packages/`.) |
 | **[DATA_SOURCES.md](DATA_SOURCES.md)** | What data exists, where each source comes from, how it's validated, and how far back it goes. |
 | **[DATA_PROFILE.md](DATA_PROFILE.md)** | Auto-generated index across the domain DBs; each `data/db/<domain>.md` describes that DB's tables, sources, and breakdown. Regenerate with `bun run report`. |
 

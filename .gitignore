@@ -1,6 +1,13 @@
 # dependencies (bun install)
 node_modules
 
+# turborepo
+.turbo
+
+# astro build artifacts
+apps/web/dist
+apps/web/.astro
+
 # output
 out
 dist

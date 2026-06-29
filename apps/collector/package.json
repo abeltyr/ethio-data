@@ -1,0 +1,51 @@
+{
+  "name": "@ethiodata/collector",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "cli": "bun run src/cli.ts",
+    "collect": "bun run src/collect.ts",
+    "collect:daily": "bun run src/collect.ts daily",
+    "collect:weekly": "bun run src/collect.ts weekly",
+    "collect:monthly": "bun run src/collect.ts monthly",
+    "collect:all": "bun run src/collect.ts all",
+    "collect:backfill": "bun run src/collect.ts backfill",
+    "report": "bun run src/report.ts",
+    "split": "bun run src/migrate_split.ts",
+    "fetch:nbe": "bun run src/cli.ts nbe daily",
+    "fetch:nbe:gold": "bun run src/cli.ts nbe gold",
+    "fetch:cbe": "bun run src/cli.ts cbe daily",
+    "fetch:zemen": "bun run src/cli.ts zemen daily",
+    "fetch:hibret": "bun run src/cli.ts hibret daily",
+    "fetch:wfp": "bun run src/cli.ts wfp prices",
+    "fetch:fewsnet": "bun run src/cli.ts fewsnet prices",
+    "fetch:worldbank": "bun run src/cli.ts worldbank macro",
+    "fetch:imf": "bun run src/cli.ts imf macro",
+    "fetch:comtrade": "bun run src/cli.ts comtrade trade",
+    "fetch:comtrade:basket": "bun run src/cli.ts comtrade basket",
+    "fetch:comtrade:partners": "bun run src/cli.ts comtrade partners",
+    "fetch:pinksheet": "bun run src/cli.ts worldbank_pinksheet prices",
+    "fetch:faostat": "bun run src/cli.ts faostat producer",
+    "fetch:rtp": "bun run src/cli.ts worldbank_rtp prices",
+    "fetch:twomerkato": "bun run src/cli.ts twomerkato ecx",
+    "fetch:parallel": "bun run src/cli.ts parallel rates",
+    "fetch:realethio": "bun run src/cli.ts realethio listings",
+    "fetch:realestate:hist": "bun run src/cli.ts realestate_hist historical",
+    "import:blackmarket": "bun run src/import_blackmarket.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ethiodata/database": "workspace:*",
+    "@ethiodata/types": "workspace:*",
+    "cheerio": "^1.2.0",
+    "papaparse": "^5.5.3",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/papaparse": "^5.5.2",
+    "typescript": "^5"
+  }
+}

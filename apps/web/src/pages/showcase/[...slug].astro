@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("showcase");
+  return docs.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Base title={entry.id}>
+  <p class="muted"><a href="/">← All showcases</a></p>
+  <article>
+    <Content />
+  </article>
+</Base>

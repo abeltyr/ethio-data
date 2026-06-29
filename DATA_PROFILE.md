@@ -1,6 +1,6 @@
 # Ethiopia Economic Data Warehouse — Data Profile
 
-_Auto-generated 2026-06-29 11:01 UTC by `src/report.ts`. Per-domain SQLite files under `data/db/`._
+_Auto-generated 2026-06-29 14:20 UTC by `src/report.ts`. Per-domain SQLite files under `data/db/`._
 
 Data is split into domain databases. Each `data/db/<domain>.db` has a matching
 `data/db/<domain>.md` describing its tables, sources, and breakdown. Regenerate with `bun run report`.
@@ -9,10 +9,10 @@ Data is split into domain databases. Each `data/db/<domain>.db` has a matching
 
 | domain DB | tables | rows | span | doc |
 | --- | --- | --- | --- | --- |
-| `data/db/currency.db` | 7 | 61,902 | 2021-04-29 → 2026-06-29 | `data/db/currency.md` |
+| `data/db/currency.db` | 7 | 62,774 | 2021-04-29 → 2026-06-29 | `data/db/currency.md` |
 | `data/db/prices.db` | 6 | 197,436 | 1960-01-15 → 2026-05-15 | `data/db/prices.md` |
-| `data/db/macro.db` | 3 | 973 | 1960 → 2025 | `data/db/macro.md` |
-| `data/db/trade.db` | 3 | 5,555 | 2008 → 2023 | `data/db/trade.md` |
+| `data/db/macro.db` | 3 | 974 | 1960 → 2025 | `data/db/macro.md` |
+| `data/db/trade.db` | 3 | 5,561 | 2008 → 2023 | `data/db/trade.md` |
 | `data/db/property.db` | 3 | 87,189 | 2017-01-14 → 2026-06-17 | `data/db/property.md` |
 
 ## Trade balance (USD)
@@ -69,7 +69,8 @@ query in `data/db/prices.md`. Ready-made packs: `analysis/informal_market.sql` (
 
 ```bash
 bun run collect:daily      # forex + ECX (daily cron); skips already-fetched units
-bun run collect:all        # every provider once; ignores freshness window
+bun run collect:all        # every provider; still skips already-fetched units (ledger)
+FORCE_REFETCH=1 bun run collect:all   # ignore the ledger and re-pull everything
 bun run report             # regenerate these docs
 bun run split              # one-time: split legacy exchange_rates.db into data/db/*.db
 ```
