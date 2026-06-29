@@ -1,0 +1,387 @@
+{
+    "status": "success",
+    "date": "2026-05-21",
+    "avg_date": "2026-05-20",
+    "rates": {
+        "day": [
+            {
+                "exchange_id": "3253",
+                "currency_code": "USD",
+                "buying_rate": "154.1063",
+                "selling_rate": "157.1884",
+                "cash_buying_rate": "155.6474",
+                "cash_selling_rate": "158.7603",
+                "post_date": "2026-05-2107: 37: 42",
+                "avg_buying_rate": "156.0760",
+                "avg_selling_rate": "159.2950"
+            },
+            {
+                "exchange_id": "3254",
+                "currency_code": "EUR",
+                "buying_rate": "183.0001",
+                "selling_rate": "186.6601",
+                "cash_buying_rate": "184.8301",
+                "cash_selling_rate": "188.5267",
+                "post_date": "2026-05-2107: 37: 42",
+                "avg_buying_rate": "186.3017",
+                "avg_selling_rate": "187.0749"
+            },
+            {
+                "exchange_id": "3255",
+                "currency_code": "GBP",
+                "buying_rate": "208.0191",
+                "selling_rate": "212.1795",
+                "cash_buying_rate": "208.0191",
+                "cash_selling_rate": "212.1795",
+                "post_date": "2026-05-2100: 07: 44",
+                "avg_buying_rate": "208.0191",
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3256",
+                "currency_code": "SEK",
+                "buying_rate": "16.4894",
+                "selling_rate": "16.8192",
+                "cash_buying_rate": "14.9229",
+                "cash_selling_rate": "15.2214",
+                "post_date": "2026-05-2107: 52: 38",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3257",
+                "currency_code": "AED",
+                "buying_rate": "41.9542",
+                "selling_rate": "42.7933",
+                "cash_buying_rate": "37.9686",
+                "cash_selling_rate": "38.7280",
+                "post_date": "2026-05-2113: 37: 39",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3258",
+                "currency_code": "CAD",
+                "buying_rate": "111.9274",
+                "selling_rate": "114.1659",
+                "cash_buying_rate": "101.2943",
+                "cash_selling_rate": "103.3202",
+                "post_date": "2026-05-2113: 52: 51",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3259",
+                "currency_code": "CHF",
+                "buying_rate": "195.7150",
+                "selling_rate": "199.6293",
+                "cash_buying_rate": "186.9078",
+                "cash_selling_rate": "190.6460",
+                "post_date": "2026-05-2113: 37: 39",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3260",
+                "currency_code": "NOK",
+                "buying_rate": "16.6234",
+                "selling_rate": "16.9559",
+                "cash_buying_rate": "15.0442",
+                "cash_selling_rate": "15.3451",
+                "post_date": "2026-05-2107: 52: 38",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            }
+        ],
+        "cash": [
+            {
+                "exchange_id": "3253",
+                "currency_code": "USD",
+                "buying_rate": "154.1063",
+                "selling_rate": "157.1884",
+                "cash_buying_rate": "155.6474",
+                "cash_selling_rate": "158.7603",
+                "post_date": "2026-05-2107: 37: 42",
+                "avg_buying_rate": "156.0760",
+                "avg_selling_rate": "159.2950"
+            },
+            {
+                "exchange_id": "3254",
+                "currency_code": "EUR",
+                "buying_rate": "183.0001",
+                "selling_rate": "186.6601",
+                "cash_buying_rate": "184.8301",
+                "cash_selling_rate": "188.5267",
+                "post_date": "2026-05-2107: 37: 42",
+                "avg_buying_rate": "186.3017",
+                "avg_selling_rate": "187.0749"
+            },
+            {
+                "exchange_id": "3255",
+                "currency_code": "GBP",
+                "buying_rate": "208.0191",
+                "selling_rate": "212.1795",
+                "cash_buying_rate": "208.0191",
+                "cash_selling_rate": "212.1795",
+                "post_date": "2026-05-2100: 07: 44",
+                "avg_buying_rate": "208.0191",
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3256",
+                "currency_code": "SEK",
+                "buying_rate": "16.4894",
+                "selling_rate": "16.8192",
+                "cash_buying_rate": "14.9229",
+                "cash_selling_rate": "15.2214",
+                "post_date": "2026-05-2107: 52: 38",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3257",
+                "currency_code": "AED",
+                "buying_rate": "41.9542",
+                "selling_rate": "42.7933",
+                "cash_buying_rate": "37.9686",
+                "cash_selling_rate": "38.7280",
+                "post_date": "2026-05-2113: 37: 39",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3258",
+                "currency_code": "CAD",
+                "buying_rate": "111.9274",
+                "selling_rate": "114.1659",
+                "cash_buying_rate": "101.2943",
+                "cash_selling_rate": "103.3202",
+                "post_date": "2026-05-2113: 52: 51",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3259",
+                "currency_code": "CHF",
+                "buying_rate": "195.7150",
+                "selling_rate": "199.6293",
+                "cash_buying_rate": "186.9078",
+                "cash_selling_rate": "190.6460",
+                "post_date": "2026-05-2113: 37: 39",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3260",
+                "currency_code": "NOK",
+                "buying_rate": "16.6234",
+                "selling_rate": "16.9559",
+                "cash_buying_rate": "15.0442",
+                "cash_selling_rate": "15.3451",
+                "post_date": "2026-05-2107: 52: 38",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            }
+        ],
+        "average": [
+            {
+                "exchange_id": "3235",
+                "currency_code": "USD",
+                "buying_rate": "154.1013",
+                "selling_rate": "157.1833",
+                "cash_buying_rate": "155.6423",
+                "cash_selling_rate": "158.7551",
+                "post_date": "2026-05-2007: 08: 25",
+                "avg_buying_rate": "155.6596",
+                "avg_selling_rate": "157.7055"
+            },
+            {
+                "exchange_id": "3236",
+                "currency_code": "EUR",
+                "buying_rate": "182.9586",
+                "selling_rate": "186.6178",
+                "cash_buying_rate": "184.7882",
+                "cash_selling_rate": "188.4840",
+                "post_date": "2026-05-2000: 07: 44",
+                "avg_buying_rate": "185.5896",
+                "avg_selling_rate": "186.6649"
+            },
+            {
+                "exchange_id": "3237",
+                "currency_code": "GBP",
+                "buying_rate": "208.0191",
+                "selling_rate": "212.1795",
+                "cash_buying_rate": "208.0191",
+                "cash_selling_rate": "212.1795",
+                "post_date": "2026-05-2000: 07: 44",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3238",
+                "currency_code": "SEK",
+                "buying_rate": "16.3656",
+                "selling_rate": "16.6929",
+                "cash_buying_rate": "14.8108",
+                "cash_selling_rate": "15.1070",
+                "post_date": "2026-05-2007: 22: 47",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3239",
+                "currency_code": "AED",
+                "buying_rate": "41.9541",
+                "selling_rate": "42.7932",
+                "cash_buying_rate": "37.9684",
+                "cash_selling_rate": "38.7278",
+                "post_date": "2026-05-2007: 22: 47",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3240",
+                "currency_code": "CAD",
+                "buying_rate": "112.0008",
+                "selling_rate": "114.2408",
+                "cash_buying_rate": "101.3607",
+                "cash_selling_rate": "103.3879",
+                "post_date": "2026-05-2007: 22: 47",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3241",
+                "currency_code": "CHF",
+                "buying_rate": "195.0922",
+                "selling_rate": "198.9940",
+                "cash_buying_rate": "186.3131",
+                "cash_selling_rate": "190.0394",
+                "post_date": "2026-05-2007: 22: 47",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3242",
+                "currency_code": "NOK",
+                "buying_rate": "16.6044",
+                "selling_rate": "16.9365",
+                "cash_buying_rate": "15.0270",
+                "cash_selling_rate": "15.3275",
+                "post_date": "2026-05-2007: 22: 47",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3261",
+                "currency_code": "JPY",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3262",
+                "currency_code": "AUD",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3263",
+                "currency_code": "DKK",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3264",
+                "currency_code": "DJF",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3265",
+                "currency_code": "INR",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3266",
+                "currency_code": "KES",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3267",
+                "currency_code": "SAR",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3268",
+                "currency_code": "ZAR",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3269",
+                "currency_code": "CNY",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            },
+            {
+                "exchange_id": "3270",
+                "currency_code": "KWD",
+                "buying_rate": null,
+                "selling_rate": null,
+                "cash_buying_rate": null,
+                "cash_selling_rate": null,
+                "post_date": "2026-05-2000: 07: 45",
+                "avg_buying_rate": null,
+                "avg_selling_rate": null
+            }
+        ]
+    }
+}

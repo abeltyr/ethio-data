@@ -1,0 +1,39 @@
+name: Monthly collection (macro & trade)
+
+on:
+  schedule:
+    - cron: "0 8 1 * *" # 1st of month, 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+
+      - name: Fetch macro indicators & trade flows
+        run: |
+          bun run src/cli.ts worldbank macro || true
+          bun run src/cli.ts imf macro || true
+          bun run src/cli.ts comtrade trade || true
+          bun run src/cli.ts faostat producer || true
+          bun run src/cli.ts worldbank_pinksheet prices || true
+
+      - name: Commit updated database
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A data || true
+          git diff --staged --quiet || git commit -m "data: monthly macro/trade update ($(date -u +%F))"
+          git push

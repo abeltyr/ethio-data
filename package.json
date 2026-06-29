@@ -1,0 +1,55 @@
+{
+  "name": "nbe-exchange-rates",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "fetch": "bun run fetch:nbe:daily && bun run fetch:nbe:gold && bun run fetch:cbe:daily",
+    "fetch:nbe": "bun run src/cli.ts nbe daily",
+    "fetch:nbe:daily": "bun run src/cli.ts nbe daily",
+    "fetch:nbe:monthly": "bun run src/cli.ts nbe monthly",
+    "fetch:nbe:gold": "bun run src/cli.ts nbe gold",
+    "fetch:cbe": "bun run src/cli.ts cbe daily",
+    "fetch:cbe:daily": "bun run src/cli.ts cbe daily",
+    "import:blackmarket": "bun run src/cli.ts blackmarket import",
+    "fetch:wfp": "bun run src/cli.ts wfp prices",
+    "fetch:fewsnet": "bun run src/cli.ts fewsnet prices",
+    "fetch:worldbank": "bun run src/cli.ts worldbank macro",
+    "fetch:imf": "bun run src/cli.ts imf macro",
+    "fetch:comtrade": "bun run src/cli.ts comtrade trade",
+    "fetch:comtrade:basket": "bun run src/cli.ts comtrade basket",
+    "fetch:comtrade:partners": "bun run src/cli.ts comtrade partners",
+    "fetch:pinksheet": "bun run src/cli.ts worldbank_pinksheet prices",
+    "fetch:faostat": "bun run src/cli.ts faostat producer",
+    "fetch:rtp": "bun run src/cli.ts worldbank_rtp prices",
+    "fetch:zemen": "bun run src/cli.ts zemen daily",
+    "fetch:hibret": "bun run src/cli.ts hibret daily",
+    "fetch:twomerkato": "bun run src/cli.ts twomerkato ecx",
+    "fetch:parallel": "bun run src/cli.ts parallel rates",
+    "fetch:realethio": "bun run src/cli.ts realethio listings",
+    "fetch:realestate:hist": "bun run src/cli.ts realestate_hist historical",
+    "fetch:prices": "bun run fetch:wfp && bun run fetch:fewsnet && bun run fetch:faostat && bun run fetch:pinksheet && bun run fetch:rtp",
+    "fetch:macro": "bun run fetch:worldbank && bun run fetch:imf && bun run fetch:comtrade",
+    "collect": "bun run src/collect.ts",
+    "collect:daily": "bun run src/collect.ts daily",
+    "collect:weekly": "bun run src/collect.ts weekly",
+    "collect:monthly": "bun run src/collect.ts monthly",
+    "collect:all": "bun run src/collect.ts all",
+    "collect:backfill": "bun run src/collect.ts backfill",
+    "report": "bun run src/report.ts",
+    "split": "bun run src/migrate_split.ts",
+    "typecheck": "bun run --bun tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/papaparse": "^5.5.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "papaparse": "^5.5.3",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}

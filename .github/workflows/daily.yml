@@ -1,0 +1,44 @@
+name: Daily collection (forex)
+
+# Forex sources are "today-only" / incremental, so they must run daily to build history.
+on:
+  schedule:
+    - cron: "30 6 * * *" # 06:30 UTC daily (~09:30 EAT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+
+      - name: Fetch forex (recent window catches gaps; dedup skips cached days)
+        run: |
+          START=$(date -u -d '5 days ago' +%F)
+          END=$(date -u +%F)
+          bun run src/cli.ts nbe daily   "$START" "$END" || true
+          bun run src/cli.ts nbe gold    "$START" "$END" || true
+          bun run src/cli.ts cbe daily   "$START" "$END" || true
+          bun run src/cli.ts zemen daily "$START" "$END" || true
+          # Hibret's cert chain is incomplete; it is skipped unless you opt in:
+          # ALLOW_INSECURE_TLS=1 bun run src/cli.ts hibret daily
+          bun run src/cli.ts hibret daily || true
+
+      - name: Commit updated database
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A data || true
+          git diff --staged --quiet || git commit -m "data: daily forex update ($(date -u +%F))"
+          git push

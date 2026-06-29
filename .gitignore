@@ -1,0 +1,50 @@
+# dependencies (bun install)
+node_modules
+
+# output
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# database and logs
+*.log
+failed_dates.log
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
+
+# Legacy single-file warehouse (split into data/db/*.db via `bun run split`).
+exchange_rates.db
+# Derived/regenerable analysis DB if one is ever built (not committed).
+data/warehouse.db
+# Per-domain DBs (data/db/*.db) ARE tracked on purpose — history accrues there.
+
+/data/db/currency.db
+/data/db/macro.db
+/data/db/prices.db
+/data/db/property.db
+/data/db/trade.db
